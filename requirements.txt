@@ -1,0 +1,2 @@
+requests #Main thing used for fetching
+pyfiglet #To make welcome message appear
