@@ -1,8 +1,6 @@
 # Changelog
 All changes to this project will be documented in this file.
 
-## [Unreleased]
-
 ## [1.1] - 2020-05-05
 ### Added
 - [Changelog](https://github.com/SkuzzyxD/ProxyGrab/blob/master/CHANGELOG.md)
