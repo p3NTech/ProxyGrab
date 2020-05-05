@@ -1,6 +1,14 @@
 # Changelog
 All changes to this project will be documented in this file.
 
+## [1.2] - 2020-05-05
+### Added
+- Added Coloroma and Termcolor to requirements
+
+### Changed
+- Changed colour for start test using Coloroma and Termcolor
+
+
 ## [1.1] - 2020-05-05
 ### Added
 - [Changelog](https://github.com/SkuzzyxD/ProxyGrab/blob/master/CHANGELOG.md)

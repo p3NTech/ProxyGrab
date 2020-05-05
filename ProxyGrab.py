@@ -1,25 +1,20 @@
 import os
-import sys
 import time
-
 import sites
 
-import pyfiglet
+#For figlet font
+import sys
+from colorama import init
+from termcolor import cprint
+from pyfiglet import figlet_format
+init(strip=not sys.stdout.isatty()) #For coloured text
 
-#Function defining to get proxies
+#Function defining to get proxies of type told
 def getproxies(ptype):
     sites.proxyscrape(ptype)
     sites.proxylist(ptype)
 
-
 time.sleep(2) #2 second wait
-
-welcome = pyfiglet.figlet_format("ProxyGrab v1.1", font = "slant")
-welcome += "\t\t\t\tBy: Skuzzy xD\n\n"
-#Start Message
-print(welcome)
-
-time.sleep(3) #! second wait
 
 #Make a directory to store proxies
 try:
@@ -27,8 +22,20 @@ try:
 except FileExistsError:
     pass
 
+welcome = figlet_format("ProxyGrab v1.2", font = "slant")
+welcome += "\t\t\t\tBy: Skuzzy xD\n\n"
+
+#Start Message
+cprint(welcome, "green")
+
+time.sleep(3) #2 second wait
+
 #Menu for Choosing Proxy Type
-menu_proxy = input("Proxies are grabbed from:\n*proxyscrape.com*\n*proxy-list.download*\n\nChoose an option:\n1. Http/Https\n2. Socks4\n3. Socks5\n4. All Proxies\n5. Exit/Cancel\n\nEnter your choice: ").lower()
+cprint("Proxies are grabbed from:", "red")
+cprint("*proxyscrape.com*\n*proxy-list.download*\n\n", "yellow")
+cprint("Choose an option:", "red")
+cprint("1. Http/Https\n2. Socks4\n3. Socks5\n4. All Proxies\n5. Exit/Cancel", "cyan")
+menu_proxy = input("\nEnter your choice: ").lower()
 
 #Choosing Proxy Type
 if menu_proxy in ["1","http","https"]:
