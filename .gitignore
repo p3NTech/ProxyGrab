@@ -137,5 +137,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-#Local saved files
+#Local saved files due to running the program
 *_proxygrab.txt
+Proxies/

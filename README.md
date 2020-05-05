@@ -7,7 +7,7 @@ I made this software to scrap proxies for my web scrapping and other testing pur
 Clone this repo to your local drive by using:
 
 ```
-git clone https://github.com/SkuzzyxD/GrabProxy
+git clone https://github.com/SkuzzyxD/GrabProxy.git
 ```
 or Download this as a zip on your PC!
 

@@ -1,60 +1,61 @@
-# MIT License
-#
-# Copyright (c) 2020 Skuzzy xD
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
+import os
+import sys
+import time
+
+import sites
 
 import pyfiglet
-import sites
-import sys
+
+#Function defining to get proxies
+def getproxies(ptype):
+    sites.proxyscrape(ptype)
+    sites.proxylist(ptype)
+
+
+time.sleep(2) #2 second wait
 
 welcome = pyfiglet.figlet_format("ProxyGrab v1.1", font = "slant")
 welcome += "\t\t\t\tBy: Skuzzy xD\n\n"
 #Start Message
 print(welcome)
 
+time.sleep(3) #! second wait
+
+#Make a directory to store proxies
+try:
+    os.mkdir("Proxies")
+except FileExistsError:
+    pass
+
 #Menu for Choosing Proxy Type
-menu_proxy = input("*Proxies are grabbed from Proxyscrape at the moment*\n\nChoose an option:\n1. Http/Https\n2. Socks4\n3. Socks4a\n4. Socks5\n5. All Proxies\n6. Exit/Cancel\n\nEnter your choice: ").lower()
+menu_proxy = input("Proxies are grabbed from:\n*proxyscrape.com*\n*proxy-list.download*\n\nChoose an option:\n1. Http/Https\n2. Socks4\n3. Socks5\n4. All Proxies\n5. Exit/Cancel\n\nEnter your choice: ").lower()
 
 #Choosing Proxy Type
 if menu_proxy in ["1","http","https"]:
     ptype = "http"
-    sites.proxyscrape(ptype)
+    time.sleep(2) #2 second wait given to prevent API Overload
+    getproxies(ptype)
 
 elif menu_proxy in ["2","socks4"]:
     ptype = "socks4"
-    sites.proxyscrape(ptype)
+    time.sleep(2) #2 second wait given to prevent API Overload
+    getproxies(ptype)
 
-elif menu_proxy in ["3","socks4a"]:
-    ptype = "socks4a"
-    sites.proxyscrape(ptype)
-
-elif menu_proxy in ["4","socks5"]:
+elif menu_proxy in ["3","socks5"]:
     ptype = "socks5"
-    sites.proxyscrape(ptype)
+    time.sleep(2) #2 second wait given to prevent API Overload
+    getproxies(ptype)
 
-elif menu_proxy in ["5", "all"]:
-    ptype = ("http", "socks4", "socks4a", "socks5")
+elif menu_proxy in ["4", "all"]:
+    ptype = ("http", "socks4", "socks5")
     for i in ptype: #Iterating through all items in tuple
-        sites.proxyscrape(i)
+        time.sleep(2) #2 second wait given to prevent API Overload
+        getproxies(i)
 
-elif menu_proxy in ["6", "exit", "cancel"]:
+elif menu_proxy in ["5", "exit", "cancel"]:
+    time.sleep(1)
+    print("Exiting Program...")
+    time.sleep(2)
     sys.exit()
 
 #If no option selected from above, return error
