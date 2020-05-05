@@ -24,18 +24,10 @@ from os import path #To delete old files
 import requests #To request data using Api
 
 #Function to get proxies from Proxyscrape
-def get_proxyscrape(ptype):
+def proxyscrape(ptype):
 
     #Api URL, the trailing / is necessary to complete the request in correct way...
     api_url = "https://api.proxyscrape.com/"
-
-    #Check if old files are there, if yes then delete them else skip
-    already_exist_file = f"{ptype}_proxyscrape_proxygrab.txt"
-    if path.exists(already_exist_file):
-        print(f"Deleting old file: {already_exist_file}")
-        os.remove(already_exist_file)
-    else:
-        pass
 
     #Two Requests, one to get proxies and other to get amount of proxies
     proxyscrape_ptype_url = f"{api_url}?request=displayproxies&proxytype={ptype}" #Get Proxies
@@ -51,14 +43,13 @@ def get_proxyscrape(ptype):
         file = open(filename, "w") #OPen the file in write mde, denoted by "w" parameter
 
         #Get text from response
-        proxyscrape_proxies = proxyscrape_ptype_response.text#.replace('\n', '') #Remove Extra Lines
+        proxyscrape_proxies = proxyscrape_ptype_response.text #Get Proxies
         proxyscrape_amt_proxies = proxyscrape_amtproxies_response.text #Get amount of proxies
 
-        print(f"Saving {proxyscrape_amt_proxies} {ptype} proxies to file...")
         file.write(proxyscrape_proxies) #save proxies to a file
         file.close() #close the file
-        print("Saved to file!\n") #Print when file is successfully saved!
+        print(f"Saved {proxyscrape_amt_proxies} {ptype} proxies to: {filename}")
 
     #If status is not equal to 200
     else:
-        error = input("An error occured!\nResponse is not 200")
+        error = input("An error occured!\nResponse not equal  200")

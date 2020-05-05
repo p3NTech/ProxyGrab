@@ -21,38 +21,41 @@
 # SOFTWARE.
 
 import pyfiglet
-from get_proxyscrape import *
+import sites
+import sys
 
-welcome = pyfiglet.figlet_format("ProxyGrab", font = "slant")
+welcome = pyfiglet.figlet_format("ProxyGrab v1.1", font = "slant")
 welcome += "\t\t\t\tBy: Skuzzy xD\n\n"
 #Start Message
 print(welcome)
 
 #Menu for Choosing Proxy Type
-menu_proxy = input("*Proxies are grabbed from Proxyscrape at the moment*\n\nChoose an option:\n1. Http/Https\n2. Socks4\n3. Socks4a\n4. Socks5\n5. All Proxies\n\nEnter your choice: ")
+menu_proxy = input("*Proxies are grabbed from Proxyscrape at the moment*\n\nChoose an option:\n1. Http/Https\n2. Socks4\n3. Socks4a\n4. Socks5\n5. All Proxies\n6. Exit/Cancel\n\nEnter your choice: ").lower()
 
 #Choosing Proxy Type
 if menu_proxy in ["1","http","https"]:
     ptype = "http"
-    get_proxyscrape(ptype)
+    sites.proxyscrape(ptype)
 
 elif menu_proxy in ["2","socks4"]:
     ptype = "socks4"
-    get_proxyscrape(ptype)
+    sites.proxyscrape(ptype)
 
 elif menu_proxy in ["3","socks4a"]:
     ptype = "socks4a"
-    get_proxyscrape(ptype)
+    sites.proxyscrape(ptype)
 
 elif menu_proxy in ["4","socks5"]:
     ptype = "socks5"
-    get_proxyscrape(ptype)
+    sites.proxyscrape(ptype)
 
 elif menu_proxy in ["5", "all"]:
     ptype = ("http", "socks4", "socks4a", "socks5")
     for i in ptype: #Iterating through all items in tuple
-        get_proxyscrape(i)
+        sites.proxyscrape(i)
 
+elif menu_proxy in ["6", "exit", "cancel"]:
+    sys.exit()
 
 #If no option selected from above, return error
 else:
