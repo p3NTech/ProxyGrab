@@ -1,4 +1,3 @@
-import os
 import requests #To request data using Api
 
 #Function to get proxies from Proxyscrape
