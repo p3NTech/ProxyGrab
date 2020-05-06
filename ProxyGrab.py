@@ -32,34 +32,39 @@ time.sleep(3) #3 second wait
 
 #Menu for Choosing Proxy Type
 cprint("Proxies are grabbed from:", "red")
-cprint("*proxyscrape.com*\n*proxy-list.download*\n\n", "yellow")
-cprint("Choose an option:", "red")
-cprint("1. Http/Https\n2. Socks4\n3. Socks5\n4. All Proxies\n5. Exit/Cancel", "cyan")
+cprint("*proxyscrape.com*\n*proxy-list.download*", "yellow")
+cprint("\n\nChoose an option:", "red")
+cprint("1. HTTP\n2. HTTPS\n3. Socks4\n4. Socks5\n5. All Proxies\n6. Exit/Cancel", "cyan")
 menu_proxy = input("\nEnter your choice: ").lower()
 
 #Choosing Proxy Type
-if menu_proxy in ["1","http","https"]:
+if menu_proxy in ("1", "https"):
     ptype = "http"
     time.sleep(2) #2 second wait given to prevent API Overload
     getproxies(ptype)
 
-elif menu_proxy in ["2","socks4"]:
+if menu_proxy in ("2", "https"):
+    ptype = "https"
+    time.sleep(2) #2 second wait given to prevent API Overload
+    getproxies(ptype)
+
+elif menu_proxy in ("3", "socks4"):
     ptype = "socks4"
     time.sleep(2) #2 second wait given to prevent API Overload
     getproxies(ptype)
 
-elif menu_proxy in ["3","socks5"]:
+elif menu_proxy in ("4", "socks5"):
     ptype = "socks5"
     time.sleep(2) #2 second wait given to prevent API Overload
     getproxies(ptype)
 
-elif menu_proxy in ["4", "all"]:
-    ptype = ("http", "socks4", "socks5")
+elif menu_proxy in ("5", "all"):
+    ptype = ("http", "https", "socks4", "socks5")
     for i in ptype: #Iterating through all items in tuple
         time.sleep(2) #2 second wait given to prevent API Overload
         getproxies(i)
 
-elif menu_proxy in ["5", "exit", "cancel"]:
+elif menu_proxy in ("6", "exit", "cancel"):
     print("Exiting Program...")
     time.sleep(1)
     sys.exit()

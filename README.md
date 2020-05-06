@@ -52,3 +52,8 @@ python3 ProxyGrab.py
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## :star: Credits
+Proxy Server data courstey of:
+* [ProxyScrape](https://proxyscrape.com/)
+* [Proxy-List](https://www.proxy-list.download/)
