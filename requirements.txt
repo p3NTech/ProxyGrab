@@ -1,4 +1,4 @@
 requests
 pyfiglet
-coloroma
+colorama
 termcolor

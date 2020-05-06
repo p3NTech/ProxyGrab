@@ -28,7 +28,7 @@ welcome += "\t\t\t\tBy: Skuzzy xD\n\n"
 #Start Message
 cprint(welcome, "green")
 
-time.sleep(3) #2 second wait
+time.sleep(3) #3 second wait
 
 #Menu for Choosing Proxy Type
 cprint("Proxies are grabbed from:", "red")
@@ -60,9 +60,8 @@ elif menu_proxy in ["4", "all"]:
         getproxies(i)
 
 elif menu_proxy in ["5", "exit", "cancel"]:
-    time.sleep(1)
     print("Exiting Program...")
-    time.sleep(2)
+    time.sleep(1)
     sys.exit()
 
 #If no option selected from above, return error
