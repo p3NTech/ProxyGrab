@@ -1,4 +1,5 @@
 # Proxy Grab
+![ProxyGrab Preview](https://i.imgur.com/7E62rUM.png "ProxyGrab")
 
 I made this software to scrap proxies for my web scrapping and other testing purposes. This program just uses Requests to get the response from API and PyFiglet to display the welcome information.
 
