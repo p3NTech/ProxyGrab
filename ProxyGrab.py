@@ -1,6 +1,7 @@
 import os
 import time
 import sites
+from update import *
 
 #For figlet font
 import sys
@@ -9,6 +10,9 @@ from termcolor import cprint
 from pyfiglet import figlet_format
 init(strip=not sys.stdout.isatty()) #For coloured text
 
+#Check if using latest version or not
+check_update()
+
 #Function defining to get proxies of type told
 def getproxies(ptype):
     sites.proxyscrape(ptype)
@@ -16,17 +20,23 @@ def getproxies(ptype):
 
 time.sleep(2) #2 second wait
 
+f=open("CURRENTVERSION", "r")
+contents =f.read()
+cv = contents.replace("\n","")
+
+wlcm_text = "ProxyGrab v" + cv
+
+welcome = figlet_format(wlcm_text, font = "slant")
+welcome += "\t\t\t\tBy: Skuzzy xD\n\n"
+
+#Start Message
+cprint(welcome, "green")
+
 #Make a directory to store proxies
 try:
     os.mkdir("Proxies")
 except FileExistsError:
     pass
-
-welcome = figlet_format("ProxyGrab v1.2", font = "slant")
-welcome += "\t\t\t\tBy: Skuzzy xD\n\n"
-
-#Start Message
-cprint(welcome, "green")
 
 time.sleep(3) #3 second wait
 
