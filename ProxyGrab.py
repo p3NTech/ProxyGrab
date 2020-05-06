@@ -31,7 +31,7 @@ welcome += "\t\t\t\tBy: Skuzzy xD\n\n"
 
 #Start Message
 cprint(welcome, "green")
-
+f.close() #Close file
 #Make a directory to store proxies
 try:
     os.mkdir("Proxies")

@@ -1,6 +1,14 @@
 # Changelog
 All changes to this project will be documented in this file.
 
+## [1.3] - 2020-05-06
+### Added
+- Added Update System Beta
+
+### Changed
+- Changed Wlcm text to load from CURRENTVERSION file
+- 
+
 ## [1.2] - 2020-05-05
 ### Added
 - Added Coloroma and Termcolor to requirements
