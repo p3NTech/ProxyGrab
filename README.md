@@ -3,6 +3,23 @@
 
 I made this software to scrap proxies for my web scrapping and other testing purposes. This program just uses Requests to get the response from API and PyFiglet to display the welcome information.
 
+## Quick Start
+You can easily start the program by using pipenv, install using:
+
+```
+pip install pipenv
+```
+
+Open the repo folder and start by:
+
+```
+cd ProxyGrab && pipenv install
+```
+
+The above command will open the Project directory and install all the dependencies using Pipenv.
+
+## Or, try the Traditional Way -
+
 ## Getting Started
 
 Clone this repo to your local drive by using:

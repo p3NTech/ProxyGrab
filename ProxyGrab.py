@@ -48,7 +48,7 @@ cprint("1. HTTP\n2. HTTPS\n3. Socks4\n4. Socks5\n5. All Proxies\n6. Exit/Cancel"
 menu_proxy = input("\nEnter your choice: ").lower()
 
 #Choosing Proxy Type
-if menu_proxy in ("1", "https"):
+if menu_proxy in ("1", "http"):
     ptype = "http"
     time.sleep(2) #2 second wait given to prevent API Overload
     getproxies(ptype)
@@ -74,7 +74,7 @@ elif menu_proxy in ("5", "all"):
         time.sleep(2) #2 second wait given to prevent API Overload
         getproxies(i)
 
-elif menu_proxy in ("6", "exit", "cancel"):
+elif menu_proxy in ("6", "exit", "cancel", "quit"):
     print("Exiting Program...")
     time.sleep(1)
     sys.exit()
